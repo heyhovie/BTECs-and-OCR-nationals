@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>BTECs and OCR nationals</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style media="screen">
+    body {
+      color: #444;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+    }
+
+    .main {
+      background-color: #444444;
+      border-radius: 10px;
+      border-style: none;
+      height: 783px;
+      position: fixed;
+      width: 1280px;
+    }
+
+    .content {
+      margin: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .interface button,
+    .antwort {
+      background-color: #ff6600;
+      border-radius: 10px;
+      border-style: none;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px 15px;
+      margin-left: 10px;
+      transition: 0.1s;
+    }
+
+    .interface button:hover,
+    .antwort:hover {
+      background-color: #444444;
+      box-shadow: 0 0 0 3px #fff;
+      cursor: pointer;
+    }
+
+    .interface {
+      margin: 20px 10px 10px auto;
+      text-align: right;
+    }
+
+    .screen {
+      background-color: #fff;
+      height: 680px;
+      margin: 5px;
+      width: 1250px;
+    }
+
+    .help-text {
+      background-color: #fff;
+      border-style: solid;
+      border-width: 3px;
+      border-color: #444;
+      border-radius: 5px;
+      bottom: 100px;
+      right: 22px;
+      padding: 10px;
+      width: 400px;
+    }
+
+    .intro {
+      background-color: #fff;
+      border-radius: 5px;
+      border-color: #444;
+      border-width: 3px;
+      border-style: solid;
+      font-size: 24px;
+      left: 50%;
+      margin: -200px 0 0 -400px;
+      top: 50%;
+      height: 400px;
+      width: 800px;
+    }
+
+    .intro p {
+      margin: 30px auto;
+      width: 100%;
+    }
+
+    .intro img {
+      width: 600px;
+    }
+
+    .heading {
+      color: #444;
+      left: 50%;
+      transform: translate(-50%);
+      text-align: center;
+    }
+
+    .intro,
+    .help-text,
+    .heading, table,input,.startPanel {
+      position: absolute;
+    }
+
+    /* Content_________________________________________________________________ */
+    table{
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 1000px;
+    }
+    table,th,td{
+      border-style: solid;
+      background-color: #fff;
+      border-width: 1px;
+      border-spacing: 0;
+    }
+    td{
+      position: relative;
+      width: 140px;
+      height: 45px;
+      text-align: left;
+      font-size: 24px;
+    }
+
+    .wrong{
+      box-shadow: 0 0 0 2px red inset;
+    }
+    .correct{
+      box-shadow: 0 0 0 2px #66cdaa inset;
+    }
+    .palette,.colbox,.startPanel{
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 2px;
+      border-color:#444;
+    }
+    .palette{
+      width: 1000px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      bottom: 100px;
+      transform: translate(-50%);
+      display: flex;
+      align-items: center;
+      justify-content:space-around;
+    }
+    .colbox{
+      width: 50px;
+      height: 50px;
+    }
+    .moccasin{
+      background-color: moccasin;
+    }
+    .cadetblue{
+      background-color: cadetblue;
+    }
+    .plum{
+      background-color: plum;
+    }
+    .pink{
+      background-color: #F5CCDF;
+    }
+    .lightblue{
+      background-color: lightblue;
+    }
+    .white{
+      background-color: white;
+    }
+    .selected{
+      box-shadow: 0 0 0 3px #ff6600;
+    }
+    .startPanel{
+      background-color: #fff;
+      font-size: 24px;
+      width: 800px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      padding: 50px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="content">
+      <div class="screen">
+        <table>
+          <thead>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Applied Sciences</td>
+              <td onclick="this.style.backgroundColor = colChoice">Hospitality</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Art and Design</td>
+              <td onclick="this.style.backgroundColor = colChoice">IT Practitioners</td>
+            </tr>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Business and Services</td>
+              <td onclick="this.style.backgroundColor = colChoice">Law and the Environment</td>
+            </tr>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Children's Care, Learning and Development</td>
+              <td onclick="this.style.backgroundColor = colChoice">Media</td>
+            </tr>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Construction, Building Services Engineering and Civil Engineering</td>
+              <td onclick="this.style.backgroundColor = colChoice">Performing Arts and Music</td>
+            </tr>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Engineering</td>
+              <td onclick="this.style.backgroundColor = colChoice">Public Services</td>
+            </tr>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Hairdressing and Beauty Therapy</td>
+              <td onclick="this.style.backgroundColor = colChoice">Sport</td>
+            </tr>
+            <tr>
+              <td onclick="this.style.backgroundColor = colChoice">Hairdressing and Beauty Therapy</td>
+              <td onclick="this.style.backgroundColor = colChoice">Travel and Tourism</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div class="palette">
+          <div class="palette-text">
+            <h1>Highlight colour:</h1>
+          </div>
+          <div class="colbox moccasin" id="moccasin" onclick="pickCol(this);this.classList.toggle('selected')">
+
+          </div>
+          <div class="colbox cadetblue" id="cadetblue" onclick="pickCol(this);this.classList.toggle('selected')">
+
+          </div>
+          <div class="colbox plum" id="plum" onclick="pickCol(this);this.classList.toggle('selected')">
+
+          </div>
+          <div class="colbox pink" id="pink" onclick="pickCol(this);this.classList.toggle('selected')">
+
+          </div>
+          <div class="colbox lightblue" id="lightblue" onclick="pickCol(this);this.classList.toggle('selected')">
+
+          </div>
+          <div class="colbox white" id="white" onclick="pickCol(this);this.classList.toggle('selected')">
+
+          </div>
+        </div>
+      </div>
+      <div class="startPanel" id="sp">
+        <p>There are many choices of subjects to study at A level. The following grid shows you all the A levels available. However, most schools are not able to offer every single one. Use the zoom tool to view this table in more detail. You can
+          also press on a colour and then press on a subject to highlight it in that colour.<br><br>Press <strong>start</strong> to begin.</p>
+      </div>
+      <div class="interface">
+        <button type="button" name="button" onclick="begin()" id="startButton">start</button>
+        <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
+        <button onclick="resetAll()" type="button" name="button">reset</button>
+      </div>
+
+    </div>
+    <div class="help-text" id="help-text" style="display:none">
+      <p>Press on one of the colours on the bottom bar to selet it and then press on a subject to highlight it. Press on white and then the subject to change it back to its original colour. <br><br>Press <strong>reset</strong> to start again.</p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // General_____________________________________________
+    function hideHelp() {
+      var x = document.getElementById("help-text");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function resetAll() {
+      window.location.reload();
+      return false;
+    }
+    var startPan = document.getElementById('sp');
+    var startButt = document.getElementById('startButton')
+
+    function begin() {
+      startPan.style.display = 'none';
+      startButt.style.display = 'none';
+    }
+    // Bespoke funcitons_____________________________________
+    var orangeC = document.getElementById('moccasin');
+    var tealC = document.getElementById('cadetblue');
+    var purpleC = document.getElementById('plum');
+    var pinkC = document.getElementById('pink');
+    var blueC = document.getElementById('lightblue');
+    var whiteC = document.getElementById('white');
+
+    var colours = [orangeC, tealC, purpleC, pinkC, blueC, whiteC];
+
+    function pickCol(box) {
+      for (i = 0; i < colours.length; i++) {
+        colours[i].classList.remove('selected');
+      }
+      colChoice = box.getAttribute('id');
+      console.log(colChoice);
+    }
+
+    var colChoice = 'white';
+  </script>
+</body>
+
+</html>
